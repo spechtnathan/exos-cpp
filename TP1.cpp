@@ -95,7 +95,7 @@ void Quatre()
     {
         cout << "Le nombre " << (b % i == 0 ? "est" : "n'est pas") << " divisible par " << i << endl;
     }
-    if(b > 0 && sqrt((float)b) == (int)sqrt((float)b)) {
+    if(b > 0 && sqrt((double)b) == (int)sqrt((double)b)) {
         cout << "Le nombre " << b << " est un carre parfait" << endl;
     }
     else {
@@ -132,7 +132,7 @@ void Six() {
 
     cout << "Le vecteur est (" << x << ", " << y << ", " << z << ")" << endl;
     cout << "La norme est " << sqrt(x * x + y * y + z * z) << endl;
-    cout << "Les angles polaires sont " << atan(y / x) << " rad et " << atan(sqrt(x * x + y * y) / z) << " rad" << endl;
+    cout << "Les angles polaires sont " << atan(y / x) << " rad et " << atan2(sqrt(x * x + y * y) / z) << " rad" << endl;
 }
 int main()
 {
@@ -167,3 +167,4 @@ int main()
         }
     }
 }
+
