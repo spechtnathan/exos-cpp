@@ -95,10 +95,9 @@ void E() {
     }
 }
 void F() {
-    // attention : 10e30 dépasse la plage d'un int ; conserver la logique originale
-    int a = (int)10e3; // ajustement pour éviter UB (valeur symbolique)
-    int b = -(int)10e3;
-    int c = 1;
+    long long a = 10e30;
+    long long b = -10e30;
+    long long c = 1;
 
     std::cout << (a + b) + c << std::endl;
     std::cout << a + (b + c) << std::endl;
@@ -107,7 +106,7 @@ void G() {
     double e;
     std::cout << "Calcul du nombre d'or via la formule de Fibonacci,\nSaisissez la precision : " << std::endl;
     std::cin >> e;
-	int a = 1, b = 1;
+	long long a = 1, b = 1;
     double oldPhi = 0;
     while (std::fabs(oldPhi - ((double)a / b)) > e) {
         oldPhi = (double)a / b;
@@ -212,15 +211,12 @@ void I() {
             std::cout << "╠────╬─────────╬───────────╬────────────╣" << std::endl;
         }
         std::cout << "╚════╩═════════╩═══════════╩════════════╝" << std::endl;
-        if (c == 4) break;
+        if (c == 4) {
+			std::cout << "Quoi ? Vous avez gagne ? La reponse était effectivement " << comb[0] << comb[1] << comb[2] << comb[3] << " !!" << std::endl;
+			return;
+		}
     }
-    if (prop == comb) {
-        std::cout << "Quoi ? Vous avez gagne ? La reponse était effectivement " << comb[0] << comb[1] << comb[2] << comb[3] << " !!" << std::endl;
-    }
-    else
-    {
-        std::cout << "Dommage -Big flop et au lit !" << std::endl;
-    }
+    std::cout << "Dommage -Big flop et au lit !" << std::endl;
 }
 int main()
 {
@@ -254,4 +250,5 @@ int main()
             std::cout << "Choix invalide. Veuillez réessayer." << std::endl;
         }
     }
+
 }
