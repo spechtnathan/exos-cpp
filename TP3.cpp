@@ -62,7 +62,7 @@ int B() {
     double nums[50] = { 0 };
     std::ifstream numbers("nombres.txt");
     if (!numbers.is_open()) {
-        std::cout << "erreur lors de la lecture du fichier \"nombres.txt\", disponible sur ecampus" << std::endl;
+        std::cout << "erreur lors de la lecture du fichier \"nombres.txt\", verifiez qu'il soit bien présent, disponible sur ecampus" << std::endl;
         return EXIT_FAILURE;
     }
     std::cout << "Le fichier contient ";
@@ -139,7 +139,7 @@ int C()
     double matrix[3][3];
     std::ifstream fMatrice("matrice.txt");
     if (!fMatrice.is_open()) {
-        std::cout << "Erreur lors du chargement du fichier matrice.txt, verifiez qu'il soit bien présent" << std::endl;
+        std::cout << "Erreur lors du chargement du fichier matrice.txt, verifiez qu'il soit bien présent, dispo sur ecampus" << std::endl;
         return EXIT_FAILURE;
     }
     std::cout << "La matrice contient :" << std::endl;
